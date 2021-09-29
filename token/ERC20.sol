@@ -18,16 +18,16 @@ contract ERC20 is IERC20
 
 
     //constructor
-    constructor(string memory name, string memory symbol, uint32 totalSupply) public
+    constructor(string memory name_, string memory symbol_, uint32 totalSupply_)
     {
         require(_totalSupply <= MAX, "ERC20: value cannot be more than 2^32");
         require(_totalSupply <= MAX, "ERC20: value cannot be less than 0");
 
-        _totalSupply = totalSupply;
+        _totalSupply = totalSupply_;
         balances[msg.sender] = _totalSupply;
 
-        _name = name;
-        _symbol = symbol;
+        _name = name_;
+        _symbol = symbol_;
     }
 
     //methods    

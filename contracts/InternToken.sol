@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.6;
 
-import "../ERC20.sol";
-import "./IBurnable.sol";
-import "./IMintable.sol";
-import "./IWhitelisted.sol";
+import "../token/ERC20.sol";
+import "../token/InternalToken/IBurnable.sol";
+import "../token/InternalToken/IMintable.sol";
+import "../token/InternalToken/IWhitelisted.sol";
 
 contract InternToken is ERC20, IBurnable, IMintable, IWhitelisted
 {

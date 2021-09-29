@@ -1,0 +1,424 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "totalSupply",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "AddToWhitelist",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_spender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "_value",
+						"type": "uint32"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "zero_address",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "Burn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "zero_address",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "Mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "RemoveFromWhitelist",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "_value",
+						"type": "uint32"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "whitelisted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts\\InternToken.sol": "InternToken"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts\\InternToken.sol": {
+			"keccak256": "0x4cba506eda80ed4a9775abcce48aacfa349668edf334af87d3ff5af7c5a03d69",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://94d21149c1fab8b31265095c20cfaa25fc96aab39462211b7ff1e0e387ebf200",
+				"dweb:/ipfs/QmQrcmnFzL2ZtEgrSCsQzgiarKFYqhV1ddwuCN8T8ixESG"
+			]
+		},
+		"token/ERC20.sol": {
+			"keccak256": "0x0314d11a870c76491bad9af3c3eecfc8c73ac95371b1ffc147e34b13713ae4f8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cb0ae77bf50817124561c8c0385153979d14eb09d5907f22502a41572bc7eba9",
+				"dweb:/ipfs/QmP3Bhw5vLmy1xTRG5acLpTy1SoUbPjmoPeCNf95bk1KPU"
+			]
+		},
+		"token/IERC20.sol": {
+			"keccak256": "0xba0258b37d0f6b5a4e3402dcd3638ccf48ff033a0c7855f9ba8b8c1aaf0918e6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://327b579cd2de819a956a3632a7bba2afe5e7ea906abc5f58dd20021955e87947",
+				"dweb:/ipfs/QmdBcnYHSQNC3wncWsWw17P54p14bvCvPAMCtrUVmcJXE7"
+			]
+		},
+		"token/InternalToken/IBurnable.sol": {
+			"keccak256": "0x540b608d3329d8f78449eeae54fea0aecd36acc42c640b736eee4c4d6a74c4b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef6ba1f7b6989b7b0af0dd5f0cfd2957bc3f40ad28a842dec17b3904ddd58627",
+				"dweb:/ipfs/QmbZPK1cgqAa3EsTFgeWCStcsaNyvAGwTMvhdFnMuLYopE"
+			]
+		},
+		"token/InternalToken/IMintable.sol": {
+			"keccak256": "0xc13106fb587b956390a0fc4202e47995daef7c1eeb050c3133290227089b7ffd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fa4bfc1cbad04b40c6cab05dfed0fa04186ef2fa63485bf557573e3c38dfe9c7",
+				"dweb:/ipfs/QmRAMchR1i8BXAA5kmVasdwsb8fgvduWwg9hrqXfXwGVZN"
+			]
+		},
+		"token/InternalToken/IWhitelisted.sol": {
+			"keccak256": "0xb21bc62eff701470bdca9e5c85a70bea752e6db8a89d9e9b3df3046675529d62",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://03bbeecfc96e71fc0ddc2b103129920d1f62bf91401b516e8844eebba6052b1f",
+				"dweb:/ipfs/QmTgoz2zkvXjXwNZUrs1We8gKqQ1ENgBhwLUzUKriSetUX"
+			]
+		}
+	},
+	"version": 1
+}
