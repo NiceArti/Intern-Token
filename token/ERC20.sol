@@ -18,34 +18,25 @@ contract ERC20 is IERC20
 
 
     //constructor
-    constructor(string memory name_, string memory symbol_, uint32 totalSupply_)
+    constructor(uint32 totalSupply_)
     {
-        require(_totalSupply <= MAX, "ERC20: value cannot be more than 2^32");
-        require(_totalSupply <= MAX, "ERC20: value cannot be less than 0");
-
         _totalSupply = totalSupply_;
         balances[msg.sender] = _totalSupply;
-
-        _name = name_;
-        _symbol = symbol_;
     }
 
     //methods    
-    function name() public virtual override view returns (string memory) { return _name; }
-    function symbol() public virtual override view returns (string memory) { return _symbol; }
+    function name() public virtual override view returns (string memory) {}
+    function symbol() public virtual override view returns (string memory) {}
     function decimals() public virtual override view returns (uint8) { return 0; }
     function totalSupply() public virtual override view returns (uint32) 
     {
-        require(_totalSupply <= MAX, "ERC20: value cannot be more than 2^32");
-        require(_totalSupply <= MAX, "ERC20: value cannot be less than 0");
-
         return _totalSupply; 
     }   
     function balanceOf(address owner) public virtual override view returns (uint32) { return balances[owner]; }
 
     function transfer(address to, uint32 value) public virtual override returns (bool)
     {
-        require(to != address(0), "ERC20: transfert to the zero address");
+        // require(to != address(0), "ERC20: transfert to the zero address");
         require(value <= balances[msg.sender], "ERC20: value is too big");
         
         balances[msg.sender] -= value;
@@ -57,10 +48,11 @@ contract ERC20 is IERC20
     }
     function transferFrom(address from, address to, uint32 value) public virtual override returns (bool)
     {
-        require(to != address(0), "ERC20: transfert to the zero address");
-        require(from != address(0), "ERC20: transfert from the zero address");
+        require(to != address(0), "ERC20: transfer to the zero address");
+        require(from != address(0), "ERC20: transfer from the zero address");
+        require(from != to, "ERC20: you cannot send to the same address");
         require(value <= balances[from], "ERC20: value is too big");
-        require(value <= allowed[from][msg.sender], "ERC20: value is too big from allowed");
+        require(value <= allowed[from][msg.sender], "ERC20: current account has no rights to transfer from owner's account");
         
         balances[from] -= value;
         allowed[from][msg.sender] -= value;

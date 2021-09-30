@@ -8,18 +8,8 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "symbol",
-						"type": "string"
-					},
-					{
 						"internalType": "uint32",
-						"name": "totalSupply",
+						"name": "totalSupply_",
 						"type": "uint32"
 					}
 				],
@@ -30,7 +20,7 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
+						"indexed": false,
 						"internalType": "address",
 						"name": "account",
 						"type": "address"
@@ -118,7 +108,7 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
+						"indexed": false,
 						"internalType": "address",
 						"name": "account",
 						"type": "address"
@@ -151,6 +141,19 @@
 				],
 				"name": "Transfer",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "addToWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -220,6 +223,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -233,6 +249,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "value",
+						"type": "uint32"
+					}
+				],
+				"name": "mint",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -243,6 +272,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "removeFromWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -372,19 +414,19 @@
 	},
 	"sources": {
 		"contracts\\InternToken.sol": {
-			"keccak256": "0x4cba506eda80ed4a9775abcce48aacfa349668edf334af87d3ff5af7c5a03d69",
+			"keccak256": "0x2b649c7f90b86644a18b7abebcf2b06150703460865abd2b601bfa0413bce0bd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://94d21149c1fab8b31265095c20cfaa25fc96aab39462211b7ff1e0e387ebf200",
-				"dweb:/ipfs/QmQrcmnFzL2ZtEgrSCsQzgiarKFYqhV1ddwuCN8T8ixESG"
+				"bzz-raw://0a7985fbf3983e3b8bf6a980538313b628aba1b318c3466438904fa273cd9802",
+				"dweb:/ipfs/QmaEKNpBcJepKqhHSwKtuAGX3mmKcG1u3NaKmkbEm4T2BZ"
 			]
 		},
 		"token/ERC20.sol": {
-			"keccak256": "0x0314d11a870c76491bad9af3c3eecfc8c73ac95371b1ffc147e34b13713ae4f8",
+			"keccak256": "0xb5dfd57de98966c235d8d9858fdea952c2a730db69d472ba67e49b9b48c207bb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cb0ae77bf50817124561c8c0385153979d14eb09d5907f22502a41572bc7eba9",
-				"dweb:/ipfs/QmP3Bhw5vLmy1xTRG5acLpTy1SoUbPjmoPeCNf95bk1KPU"
+				"bzz-raw://1049c841d4052fadb58050ec251c99619e52cf73e4b415e7d8ee0fbbe591afd0",
+				"dweb:/ipfs/Qma8TH4SZHpWzGT9T3J7d2E4KqR8LJQrQsxFX9KBApvQ7d"
 			]
 		},
 		"token/IERC20.sol": {
@@ -396,27 +438,35 @@
 			]
 		},
 		"token/InternalToken/IBurnable.sol": {
-			"keccak256": "0x540b608d3329d8f78449eeae54fea0aecd36acc42c640b736eee4c4d6a74c4b8",
+			"keccak256": "0x4ef380b5e30d78852269b05dc1a40c47ffd99ade1eae2bf18dfdda5ea01dfc4b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ef6ba1f7b6989b7b0af0dd5f0cfd2957bc3f40ad28a842dec17b3904ddd58627",
-				"dweb:/ipfs/QmbZPK1cgqAa3EsTFgeWCStcsaNyvAGwTMvhdFnMuLYopE"
+				"bzz-raw://47da4848f6a918491e489d5cc8020afade2e3e252a91d2f5bcb8e595391a631b",
+				"dweb:/ipfs/QmVcuQdquREApiuANUeXFQJ13pv19qm8n1QbsfCwuwBGZA"
 			]
 		},
 		"token/InternalToken/IMintable.sol": {
-			"keccak256": "0xc13106fb587b956390a0fc4202e47995daef7c1eeb050c3133290227089b7ffd",
+			"keccak256": "0xb0a9a6c54ae698541b3bfac405d460373758a0d4a9dbf031c2ab162488e278a3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fa4bfc1cbad04b40c6cab05dfed0fa04186ef2fa63485bf557573e3c38dfe9c7",
-				"dweb:/ipfs/QmRAMchR1i8BXAA5kmVasdwsb8fgvduWwg9hrqXfXwGVZN"
+				"bzz-raw://00e2676174c01715bc7dcf274c63c09599d141bfe02e76e55780e2ddead6d157",
+				"dweb:/ipfs/QmRcb3UGFsMBeUe6rPn4t29c2mswqgtKiNerbd1Ltbg5py"
 			]
 		},
 		"token/InternalToken/IWhitelisted.sol": {
-			"keccak256": "0xb21bc62eff701470bdca9e5c85a70bea752e6db8a89d9e9b3df3046675529d62",
+			"keccak256": "0xad51c7117cb068c651032669842bc7242bd8ad273da60f90c4b0f16a00b872e8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://03bbeecfc96e71fc0ddc2b103129920d1f62bf91401b516e8844eebba6052b1f",
-				"dweb:/ipfs/QmTgoz2zkvXjXwNZUrs1We8gKqQ1ENgBhwLUzUKriSetUX"
+				"bzz-raw://0f07fdc6a4c55a88530dba6343a09a69b900b353d44193dd4c7f21e2f9568745",
+				"dweb:/ipfs/QmWkiqxFgaEBeQjedHExYuTy1Q7PynNtGsxwkKYXUHf8YR"
+			]
+		},
+		"token/InternalToken/Whitelist.sol": {
+			"keccak256": "0xaf0fbe0d57862eeef1e2363fd0895cd781c24396390db174459bb4e56e2cfa73",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://225cf73356329b7c7a860de075bc10ebc3fd4b3ff710908f615a00be5449f980",
+				"dweb:/ipfs/QmZEkWJC9dUFGQ3TmNhj48Cq5JjSGJETRvSvQMQRjTt9JK"
 			]
 		}
 	},

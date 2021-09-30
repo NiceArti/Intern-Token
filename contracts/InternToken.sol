@@ -5,58 +5,80 @@ import "../token/ERC20.sol";
 import "../token/InternalToken/IBurnable.sol";
 import "../token/InternalToken/IMintable.sol";
 import "../token/InternalToken/IWhitelisted.sol";
+import "../token/InternalToken/Whitelist.sol";
 
-contract InternToken is ERC20, IBurnable, IMintable, IWhitelisted
+contract InternToken is ERC20, Whitelist, IBurnable, IMintable
 {
-    string private _name = "Intern token";
-    string private _symbol = "INT";
-    uint32 private _totalSupply = 1000000000;
+    string private _name;
+    string private _symbol;
+    uint32 private _totalSupply;
 
-    mapping(address => bool) public whitelisted;
-
-    constructor(string memory name, string memory symbol, uint32 totalSupply) ERC20(_name, _symbol, _totalSupply){}
-
-
-
-    function burn(address account, uint32 value) internal 
+    constructor(uint32 totalSupply_) ERC20(_totalSupply)
     {
-        require(account != address(0), "INT: your tokens are burned");
-        require(value <= balances[account], "INT: value is too bigs");
+        whitelisted[msg.sender] = true;
 
-        emit Transfer(account, address(0), value);
-        emit Burn(account, address(0), value);
+        _totalSupply = totalSupply_;
+        balances[msg.sender] = _totalSupply;
+
+        _name = "Intern Token";
+        _symbol = "INT";
+    }
+
+
+    function name() public view override returns (string memory)
+    {
+        return _name;
+    }
+
+    function symbol() public view override returns (string memory)
+    {
+        return _symbol;
+    }
+
+    function totalSupply() public override view returns (uint32) 
+    {
+        return _totalSupply; 
+    }
+
+    function burn(uint32 value) public override
+    {
+        _burn(msg.sender, value);
+    }
+
+    function mint(uint32 value) public override
+    {
+        _mint(msg.sender, value);
     }
 
 
 
-    function mint(address account, uint32 value) internal
+
+
+
+
+    function _burn(address account, uint32 value) internal
+    {
+        require(account != address(0), "INT: your tokens are burned");
+        require(value <= balances[account], "INT: value is too bigs");
+
+        transfer(address(0), value);
+        _totalSupply -= value;
+
+        emit Transfer(msg.sender, address(0), value);
+        emit Burn(msg.sender, address(0), value);
+    }
+
+
+
+    function _mint(address account, uint32 value) internal
     {
         require(account != address(0), "INT: your tokens are burned");
         require(totalSupply() <= MAX, "INT: token value is overfrow");
         require(totalSupply() >= MIN, "INT: token value cannot be negative");
 
         balances[account] += value;
+        _totalSupply += value;
 
-        emit Transfer(address(0), account, value);
         emit Mint(address(0), account, value);
-    }
-
-
-    function addToWhitelist(address account) internal onlyWhitelisted
-    {
-        whitelisted[account] = true;
-        emit AddToWhitelist(account);
-    }
-
-    function removeFromWhitelist(address account) internal onlyWhitelisted
-    {
-        whitelisted[account] = false;       
-        emit RemoveFromWhitelist(account);
-    }
-
-    modifier onlyWhitelisted()
-    {
-        require(whitelisted[msg.sender] == true, "INT: only owner can do that!");
-        _;
     }
 }
