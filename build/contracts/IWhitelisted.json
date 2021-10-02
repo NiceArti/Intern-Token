@@ -5,7 +5,7 @@
       "anonymous": false,
       "inputs": [
         {
-          "indexed": true,
+          "indexed": false,
           "internalType": "address",
           "name": "account",
           "type": "address"
@@ -18,7 +18,7 @@
       "anonymous": false,
       "inputs": [
         {
-          "indexed": true,
+          "indexed": false,
           "internalType": "address",
           "name": "account",
           "type": "address"
@@ -28,7 +28,7 @@
       "type": "event"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AddToWhitelist\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RemoveFromWhitelist\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/token/InternalToken/IWhitelisted.sol\":\"IWhitelisted\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/token/InternalToken/IWhitelisted.sol\":{\"keccak256\":\"0xb21bc62eff701470bdca9e5c85a70bea752e6db8a89d9e9b3df3046675529d62\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://03bbeecfc96e71fc0ddc2b103129920d1f62bf91401b516e8844eebba6052b1f\",\"dweb:/ipfs/QmTgoz2zkvXjXwNZUrs1We8gKqQ1ENgBhwLUzUKriSetUX\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AddToWhitelist\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RemoveFromWhitelist\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/token/InternalToken/IWhitelisted.sol\":\"IWhitelisted\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/token/InternalToken/IWhitelisted.sol\":{\"keccak256\":\"0xad51c7117cb068c651032669842bc7242bd8ad273da60f90c4b0f16a00b872e8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f07fdc6a4c55a88530dba6343a09a69b900b353d44193dd4c7f21e2f9568745\",\"dweb:/ipfs/QmWkiqxFgaEBeQjedHExYuTy1Q7PynNtGsxwkKYXUHf8YR\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -36,21 +36,21 @@
   "deployedGeneratedSources": [],
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface IWhitelisted\r\n{\r\n    event AddToWhitelist(address indexed account);\r\n    event RemoveFromWhitelist(address indexed account);\r\n}",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface IWhitelisted\r\n{\r\n    event AddToWhitelist(address account);\r\n    event RemoveFromWhitelist(address account);\r\n}",
   "sourcePath": "C:\\Users\\User\\Desktop\\Solidity\\InternToken\\token\\InternalToken\\IWhitelisted.sol",
   "ast": {
     "absolutePath": "project:/token/InternalToken/IWhitelisted.sol",
     "exportedSymbols": {
       "IWhitelisted": [
-        665
+        654
       ]
     },
-    "id": 666,
+    "id": 655,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 656,
+        "id": 645,
         "literals": [
           "solidity",
           "^",
@@ -66,9 +66,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 665,
+        "id": 654,
         "linearizedBaseContracts": [
-          665
+          654
         ],
         "name": "IWhitelisted",
         "nameLocation": "70:12:6",
@@ -76,24 +76,24 @@
         "nodes": [
           {
             "anonymous": false,
-            "id": 660,
+            "id": 649,
             "name": "AddToWhitelist",
             "nameLocation": "97:14:6",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 659,
+              "id": 648,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 658,
-                  "indexed": true,
+                  "id": 647,
+                  "indexed": false,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "128:7:6",
+                  "nameLocation": "120:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 660,
-                  "src": "112:23:6",
+                  "scope": 649,
+                  "src": "112:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -101,7 +101,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 657,
+                    "id": 646,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "112:7:6",
@@ -114,30 +114,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "111:25:6"
+              "src": "111:17:6"
             },
-            "src": "91:46:6"
+            "src": "91:38:6"
           },
           {
             "anonymous": false,
-            "id": 664,
+            "id": 653,
             "name": "RemoveFromWhitelist",
-            "nameLocation": "149:19:6",
+            "nameLocation": "141:19:6",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 663,
+              "id": 652,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 662,
-                  "indexed": true,
+                  "id": 651,
+                  "indexed": false,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "185:7:6",
+                  "nameLocation": "169:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 664,
-                  "src": "169:23:6",
+                  "scope": 653,
+                  "src": "161:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -145,10 +145,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 661,
+                    "id": 650,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "169:7:6",
+                    "src": "161:7:6",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -158,31 +158,31 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "168:25:6"
+              "src": "160:17:6"
             },
-            "src": "143:51:6"
+            "src": "135:43:6"
           }
         ],
-        "scope": 666,
-        "src": "60:137:6",
+        "scope": 655,
+        "src": "60:121:6",
         "usedErrors": []
       }
     ],
-    "src": "33:164:6"
+    "src": "33:148:6"
   },
   "legacyAST": {
     "absolutePath": "project:/token/InternalToken/IWhitelisted.sol",
     "exportedSymbols": {
       "IWhitelisted": [
-        665
+        654
       ]
     },
-    "id": 666,
+    "id": 655,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 656,
+        "id": 645,
         "literals": [
           "solidity",
           "^",
@@ -198,9 +198,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": true,
-        "id": 665,
+        "id": 654,
         "linearizedBaseContracts": [
-          665
+          654
         ],
         "name": "IWhitelisted",
         "nameLocation": "70:12:6",
@@ -208,24 +208,24 @@
         "nodes": [
           {
             "anonymous": false,
-            "id": 660,
+            "id": 649,
             "name": "AddToWhitelist",
             "nameLocation": "97:14:6",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 659,
+              "id": 648,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 658,
-                  "indexed": true,
+                  "id": 647,
+                  "indexed": false,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "128:7:6",
+                  "nameLocation": "120:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 660,
-                  "src": "112:23:6",
+                  "scope": 649,
+                  "src": "112:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -233,7 +233,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 657,
+                    "id": 646,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "112:7:6",
@@ -246,30 +246,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "111:25:6"
+              "src": "111:17:6"
             },
-            "src": "91:46:6"
+            "src": "91:38:6"
           },
           {
             "anonymous": false,
-            "id": 664,
+            "id": 653,
             "name": "RemoveFromWhitelist",
-            "nameLocation": "149:19:6",
+            "nameLocation": "141:19:6",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 663,
+              "id": 652,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 662,
-                  "indexed": true,
+                  "id": 651,
+                  "indexed": false,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "185:7:6",
+                  "nameLocation": "169:7:6",
                   "nodeType": "VariableDeclaration",
-                  "scope": 664,
-                  "src": "169:23:6",
+                  "scope": 653,
+                  "src": "161:15:6",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -277,10 +277,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 661,
+                    "id": 650,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "169:7:6",
+                    "src": "161:7:6",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -290,17 +290,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "168:25:6"
+              "src": "160:17:6"
             },
-            "src": "143:51:6"
+            "src": "135:43:6"
           }
         ],
-        "scope": 666,
-        "src": "60:137:6",
+        "scope": 655,
+        "src": "60:121:6",
         "usedErrors": []
       }
     ],
-    "src": "33:164:6"
+    "src": "33:148:6"
   },
   "compiler": {
     "name": "solc",
@@ -308,7 +308,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-29T11:22:16.854Z",
+  "updatedAt": "2021-09-30T09:47:36.280Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

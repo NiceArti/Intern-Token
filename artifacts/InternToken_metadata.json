@@ -17,6 +17,17 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "Antisuicide",
+				"type": "error"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -414,19 +425,19 @@
 	},
 	"sources": {
 		"contracts\\InternToken.sol": {
-			"keccak256": "0x2b649c7f90b86644a18b7abebcf2b06150703460865abd2b601bfa0413bce0bd",
+			"keccak256": "0x5a842313b37146ad402d71869b25d06258e0cda985378e27f0d75a60b5fc5a49",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://0a7985fbf3983e3b8bf6a980538313b628aba1b318c3466438904fa273cd9802",
-				"dweb:/ipfs/QmaEKNpBcJepKqhHSwKtuAGX3mmKcG1u3NaKmkbEm4T2BZ"
+				"bzz-raw://48c05c81e31929022eff94945c9b601980f5f6f968097dac69c8eb4749155353",
+				"dweb:/ipfs/QmajjzCKf1VrUPjpGwpkjJUeswqu93mj9ddSsK1UJYbD9y"
 			]
 		},
 		"token/ERC20.sol": {
-			"keccak256": "0xb5dfd57de98966c235d8d9858fdea952c2a730db69d472ba67e49b9b48c207bb",
+			"keccak256": "0x4dacc82a88659982342c19b564a47f34e7f0200f1cd19cce475af8d21ac3e93f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1049c841d4052fadb58050ec251c99619e52cf73e4b415e7d8ee0fbbe591afd0",
-				"dweb:/ipfs/Qma8TH4SZHpWzGT9T3J7d2E4KqR8LJQrQsxFX9KBApvQ7d"
+				"bzz-raw://b4a373df7646e2b493a6d6769b58e0b613085e11874dd12333367999dd62d984",
+				"dweb:/ipfs/QmXdnf1PZSshwXzpWDcMd8ynsLxFAi2X6P7yXtjRX6KDCT"
 			]
 		},
 		"token/IERC20.sol": {
@@ -462,11 +473,11 @@
 			]
 		},
 		"token/InternalToken/Whitelist.sol": {
-			"keccak256": "0xaf0fbe0d57862eeef1e2363fd0895cd781c24396390db174459bb4e56e2cfa73",
+			"keccak256": "0x24626165ca47d7858adee9653b4145aadfaab7364a6982930886616685c3234e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://225cf73356329b7c7a860de075bc10ebc3fd4b3ff710908f615a00be5449f980",
-				"dweb:/ipfs/QmZEkWJC9dUFGQ3TmNhj48Cq5JjSGJETRvSvQMQRjTt9JK"
+				"bzz-raw://39c38ba71556b4abb81f9f1332f44e4eccaedaa062576bfe4b50763870ee9f11",
+				"dweb:/ipfs/QmS6FJnwj5GMoeBuVgEWePvPp6aZdEEHb8NpqhHHWKtLr6"
 			]
 		}
 	},

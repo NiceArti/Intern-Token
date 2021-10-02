@@ -13,7 +13,7 @@ contract InternToken is ERC20, Whitelist, IBurnable, IMintable
     string private _symbol;
     uint32 private _totalSupply;
 
-    constructor(uint32 totalSupply_) ERC20(_totalSupply)
+    constructor(uint32 totalSupply_) public ERC20(_totalSupply)
     {
         whitelisted[msg.sender] = true;
 
@@ -40,12 +40,12 @@ contract InternToken is ERC20, Whitelist, IBurnable, IMintable
         return _totalSupply; 
     }
 
-    function burn(uint32 value) public override
+    function burn(uint32 value) onlyWhitelisted public override
     {
         _burn(msg.sender, value);
     }
 
-    function mint(uint32 value) public override
+    function mint(uint32 value) onlyWhitelisted public override
     {
         _mint(msg.sender, value);
     }
@@ -64,7 +64,6 @@ contract InternToken is ERC20, Whitelist, IBurnable, IMintable
         transfer(address(0), value);
         _totalSupply -= value;
 
-        emit Transfer(msg.sender, address(0), value);
         emit Burn(msg.sender, address(0), value);
     }
 
@@ -79,6 +78,6 @@ contract InternToken is ERC20, Whitelist, IBurnable, IMintable
         balances[account] += value;
         _totalSupply += value;
 
-        emit Mint(address(0), account, value);
+        emit Mint( account, value);
     }
 }

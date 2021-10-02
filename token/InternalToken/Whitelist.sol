@@ -5,7 +5,10 @@ import "./IWhitelisted.sol";
 
 contract Whitelist is IWhitelisted
 {
+    error Antisuicide(string message);
+
     mapping(address => bool) public whitelisted;
+    
 
     function addToWhitelist(address account) public onlyWhitelisted
     {
@@ -19,6 +22,11 @@ contract Whitelist is IWhitelisted
     function removeFromWhitelist(address account) public onlyWhitelisted
     {
         require(whitelisted[account] == true, "Whitelist: this account was not in whitelist");
+        
+        if(msg.sender == account)
+        {
+            revert Antisuicide("Whitelist: you cannot remove yourself");
+        }
 
         whitelisted[account] = false;       
         emit RemoveFromWhitelist(account);
@@ -26,7 +34,7 @@ contract Whitelist is IWhitelisted
 
     modifier onlyWhitelisted()
     {
-        require(whitelisted[msg.sender] == true, "INT: only whitelisted can do that!");
+        require(whitelisted[msg.sender] == true, "Whitelist: only whitelisted can do this operation!");
         _;
     }
 }

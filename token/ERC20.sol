@@ -36,7 +36,6 @@ contract ERC20 is IERC20
 
     function transfer(address to, uint32 value) public virtual override returns (bool)
     {
-        // require(to != address(0), "ERC20: transfert to the zero address");
         require(value <= balances[msg.sender], "ERC20: value is too big");
         
         balances[msg.sender] -= value;
