@@ -13,7 +13,7 @@ contract InternToken is ERC20, Whitelist, IBurnable, IMintable
     string private _symbol;
     uint32 private _totalSupply;
 
-    constructor(uint32 totalSupply_) public ERC20(_totalSupply)
+    constructor(uint32 totalSupply_) ERC20(_totalSupply)
     {
         whitelisted[msg.sender] = true;
 

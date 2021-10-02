@@ -360,8 +360,4 @@ contract('InternToken', accounts =>
     });
 
   });
-
-
-
-
 });
