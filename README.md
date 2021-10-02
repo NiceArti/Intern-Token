@@ -5,7 +5,7 @@ Nichita Cravcenco (c)
 Project "INT" is the first assignment from Titanium to test our knowledge
 during the internship.
 
-#1
+# 1
 
 was added:
 
@@ -17,7 +17,7 @@ was added:
 - U can remove from whitelist
 - U can let spender to transfer from ur account nth tokens
 
-##New
+## New
 
 added:
 
