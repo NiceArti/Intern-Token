@@ -71,13 +71,13 @@ contract InternToken is ERC20, Whitelist, IBurnable, IMintable
 
     function _mint(address account, uint32 value) internal
     {
-        require(account != address(0), "INT: your tokens are burned");
+        require(account != address(0), "INT: your tokens are minted");
         require(totalSupply() <= MAX, "INT: token value is overfrow");
-        require(totalSupply() >= MIN, "INT: token value cannot be negative");
+        require(value >= MIN, "INT: token value cannot be negative");
 
         balances[account] += value;
         _totalSupply += value;
 
-        emit Mint( account, value);
+        emit Mint(account, value);
     }
 }

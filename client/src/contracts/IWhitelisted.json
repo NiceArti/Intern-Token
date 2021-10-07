@@ -1,0 +1,322 @@
+{
+  "contractName": "IWhitelisted",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "AddToWhitelist",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "RemoveFromWhitelist",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"AddToWhitelist\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"RemoveFromWhitelist\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/token/InternalToken/IWhitelisted.sol\":\"IWhitelisted\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/token/InternalToken/IWhitelisted.sol\":{\"keccak256\":\"0xad51c7117cb068c651032669842bc7242bd8ad273da60f90c4b0f16a00b872e8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0f07fdc6a4c55a88530dba6343a09a69b900b353d44193dd4c7f21e2f9568745\",\"dweb:/ipfs/QmWkiqxFgaEBeQjedHExYuTy1Q7PynNtGsxwkKYXUHf8YR\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\ninterface IWhitelisted\r\n{\r\n    event AddToWhitelist(address account);\r\n    event RemoveFromWhitelist(address account);\r\n}",
+  "sourcePath": "C:\\Users\\User\\Desktop\\Solidity\\InternToken\\token\\InternalToken\\IWhitelisted.sol",
+  "ast": {
+    "absolutePath": "project:/token/InternalToken/IWhitelisted.sol",
+    "exportedSymbols": {
+      "IWhitelisted": [
+        642
+      ]
+    },
+    "id": 643,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 633,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:6"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 642,
+        "linearizedBaseContracts": [
+          642
+        ],
+        "name": "IWhitelisted",
+        "nameLocation": "70:12:6",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 637,
+            "name": "AddToWhitelist",
+            "nameLocation": "97:14:6",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 636,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 635,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "120:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 637,
+                  "src": "112:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 634,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "112:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "111:17:6"
+            },
+            "src": "91:38:6"
+          },
+          {
+            "anonymous": false,
+            "id": 641,
+            "name": "RemoveFromWhitelist",
+            "nameLocation": "141:19:6",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 640,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 639,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "169:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 641,
+                  "src": "161:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 638,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "160:17:6"
+            },
+            "src": "135:43:6"
+          }
+        ],
+        "scope": 643,
+        "src": "60:121:6",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:148:6"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/token/InternalToken/IWhitelisted.sol",
+    "exportedSymbols": {
+      "IWhitelisted": [
+        642
+      ]
+    },
+    "id": 643,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 633,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:6"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 642,
+        "linearizedBaseContracts": [
+          642
+        ],
+        "name": "IWhitelisted",
+        "nameLocation": "70:12:6",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 637,
+            "name": "AddToWhitelist",
+            "nameLocation": "97:14:6",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 636,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 635,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "120:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 637,
+                  "src": "112:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 634,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "112:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "111:17:6"
+            },
+            "src": "91:38:6"
+          },
+          {
+            "anonymous": false,
+            "id": 641,
+            "name": "RemoveFromWhitelist",
+            "nameLocation": "141:19:6",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 640,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 639,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "169:7:6",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 641,
+                  "src": "161:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 638,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "161:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "160:17:6"
+            },
+            "src": "135:43:6"
+          }
+        ],
+        "scope": 643,
+        "src": "60:121:6",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:148:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-10-02T12:14:27.775Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
