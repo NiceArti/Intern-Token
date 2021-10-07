@@ -11,7 +11,8 @@ class App extends Component {
     contract: null, 
     balanceOfMsgSender: null,
     anotherAccount: null,
-    amount: 0
+    amount: 0,
+    whitelisted: false
   };
 
   componentDidMount = async () => 
@@ -38,8 +39,10 @@ class App extends Component {
         deployedNetwork && deployedNetwork.address,
       );
       const balanceOfMsgSender = await instance.methods.balanceOf(accounts[0]).call();
+      const whitelisted = await instance.methods.whitelisted.call(accounts[0]);
 
       console.log(instance);
+      console.log(whitelisted);
       
 
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -49,6 +52,7 @@ class App extends Component {
         accounts,
         contract: instance,
         balanceOfMsgSender,
+        whitelisted
       });
     } 
     catch (error) 
@@ -129,6 +133,7 @@ class App extends Component {
         <div id="header">
           <h1 align="center">Intern Token</h1>
           <span id="balance" >Balance: {this.state.balanceOfMsgSender}</span>
+          <span id="balance" >Balance: {this.state.whitelisted}</span>
           <span id="account" >Account: {this.state.accounts}</span>
         </div>
         <hr width="99%"/>
