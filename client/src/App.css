@@ -105,3 +105,21 @@ input[type="button"]:disabled, input[type="submit"]:disabled
 {
   background: rgb(71, 69, 68);
 }
+
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+td, th {
+  border: 1px solid #9c9c9c77;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #9c9c9c77;
+}
